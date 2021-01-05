@@ -48,10 +48,23 @@ function buildCharts(sample) {
 
 // Define function that will run on page load
 function init() {
+    //Select the dropdown menu using HTML inspection
+    var dropdownMenu = d3.select("#selDataset")
 
     // Read json data
+    d3.json("samples.json").then((data)=> {
+        //Creating descriptive variable for names
+        var names = data.names;
+        //Checking to see if sample names were properly logged
+        console.log(names);
 
-        // Parse and filter data to get sample names
+            //Getting the name that the user selected
+            // var dataset = dropdownMenu.property("value");
+        
+            // Parse and filter data to get sample names
+
+    });
+
 
         // Add dropdown option for each sample
 
