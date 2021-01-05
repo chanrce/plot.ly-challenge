@@ -6,10 +6,29 @@ Feel free to disregard and create your own code */
 function buildMetadata(sample) {
 
     // Read the json data
-
+    d3.json("samples.json").then((data) => {
         // Parse and filter the data to get the sample's metadata
+        //Getting metadata from samples.json
+        var Metadata = data.Metadata;
 
-        // Specify the location of the metadata and update it
+        //Filtering the samples.json data by id. Returning samples.json values if they match the given "sample"
+        var filteredData =  Metadata.filter(selectiondata => selectiondata.id == sample);
+        filteredData = filteredData[0]
+        console.log(filteredData);
+        
+
+        // Specify the location of the metadata -- where the new demographic chart will go --  and update it
+        //Identifying the location -- use inspect HTML
+        var demographics = d3.select("#sample-metadata");
+
+        //Refreshing/Updating the chart with new selected sample
+        demographics.html("");
+
+
+
+
+    });
+    
 
 }
 
