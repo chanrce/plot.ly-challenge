@@ -9,7 +9,7 @@ function buildMetadata(sample) {
     d3.json("samples.json").then((data) => {
         // Parse and filter the data to get the sample's metadata
         //Getting metadata from samples.json
-        var Metadata = data.Metadata;
+        var Metadata = data.metadata;
 
         //Filtering the samples.json data by id. Returning samples.json values if they match the given "sample"
         var filteredData =  Metadata.filter(selectiondata => selectiondata.id == sample);
@@ -62,9 +62,9 @@ function init() {
 function optionChanged(newSample){
 
     // Update metadata with newly selected sample
-
+    buildMetadata(newSample);
     // Update charts with newly selected sample
-
+    buildCharts(newSample);
 }
 
 // Initialize dashboard on page load
