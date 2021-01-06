@@ -53,15 +53,24 @@ function init() {
 
     // Read json data
     d3.json("samples.json").then((data)=> {
-        //Creating descriptive variable for names
+        //Creating descriptive variable for names. Getting names from samples.json file.
         var names = data.names;
         //Checking to see if sample names were properly logged
         console.log(names);
-
-            //Getting the name that the user selected
-            // var dataset = dropdownMenu.property("value");
+        // Parse and filter data to get sample names
         
-            // Parse and filter data to get sample names
+        //Creating forEach
+        names.forEach(function(name) {
+
+            //Appending the options to the menu:
+            var options = dropdownMenu.append("option")
+
+            //Converting the options to text format
+            options.text(name)
+            
+
+        });
+
 
     });
 
