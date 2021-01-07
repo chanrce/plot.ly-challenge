@@ -27,6 +27,16 @@ function buildMetadata(sample) {
 
 
 
+       //Add this information to the demographic info table
+        Object.entries(filteredData).forEach(function([key,value]) {
+            console.log(key,value);
+            var row = demographics.append("tr")
+            row.append("td").html(`${key}`)
+            row.append("td").html(`${value}`)
+
+        });
+
+
     });
     
 
@@ -36,6 +46,19 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 
     // Read the json data
+    d3.json("samples.json").then((data) => {
+        console.log(data)
+        //Filtering by samples section in json
+        // var byid = data.samples.filter()
+
+        
+
+
+
+
+    })
+
+
 
         // Parse and filter the data to get the sample's OTU data
         // Pay attention to what data is required for each chart
@@ -70,7 +93,9 @@ function init() {
             
 
         });
-
+        //Calls the first item in the dropdown
+        buildMetadata(names[0])
+        buildCharts(names[0])
 
     });
 
