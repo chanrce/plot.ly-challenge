@@ -48,10 +48,17 @@ function buildCharts(sample) {
     // Read the json data
     d3.json("samples.json").then((data) => {
         console.log(data)
-        //Filtering by samples section in json
-        // var byid = data.samples.filter()
-
+        // Parse and filter the data to get the sample's OTU data
+        //Filtering by samples section in json. The id and sample are equal -- correspond to the dropdown selection
+        var byid = data.samples.filter(entry => entry.id == sample)[0];
+        console.log(byid)
+        //Data for chart from samples section
+        var values = byid.sample_values;
+        var otuids = byid.otu_ids;
+        var otulabels = byid.otu_labels;
         
+        // Create bar chart in correct location
+        // Create bubble chart in correct location        
 
 
 
@@ -60,13 +67,6 @@ function buildCharts(sample) {
 
 
 
-        // Parse and filter the data to get the sample's OTU data
-        // Pay attention to what data is required for each chart
-
-        // Create bar chart in correct location
-
-        // Create bubble chart in correct location
-    
 }
 
 // Define function that will run on page load
