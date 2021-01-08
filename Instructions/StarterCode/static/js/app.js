@@ -55,9 +55,40 @@ function buildCharts(sample) {
         //Data for chart from samples section
         var values = byid.sample_values;
         var otuids = byid.otu_ids;
-        var otulabels = byid.otu_labels;
+        var otu_labels = byid.otu_labels;
         
         // Create bar chart in correct location
+
+        //Slicing to take only top 10 values
+        var ten_otus = otuids.slice(0, 10).reverse();
+        var ten_values = values.slice(0,10).reverse();
+        var ten_otulabels = otu_labels.slice(0,10).reverse();
+
+        //Bar chart creation
+        var trace = {
+            x: ten_values,
+            y: ten_otus,
+            text: ten_otulabels,
+            orientation: "h",
+            type: "bar"
+           
+            
+        };
+
+        //Create data array for the plot
+        var bar_data = trace
+
+        //Define the plot layout
+        var bar_layout ={
+            title: `Top Ten OTUs for ${sample}`,
+            xaxis: {title: "Sample Value"}
+
+        }
+        
+        //Plotting
+        Plotly.newPlot("bar", bar_data, bar_layout);
+
+
         // Create bubble chart in correct location        
 
 
