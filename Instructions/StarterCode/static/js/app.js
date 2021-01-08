@@ -61,13 +61,21 @@ function buildCharts(sample) {
 
         //Slicing to take only top 10 values
         var ten_otus = otuids.slice(0, 10).reverse();
+        console.log(ten_otus);
+        
+        var named_otus = ten_otus.map(named => `OTU ${named}`);
+        console.log(named_otus)
+       
         var ten_values = values.slice(0,10).reverse();
+        console.log(ten_values);
+
         var ten_otulabels = otu_labels.slice(0,10).reverse();
+        console.log(ten_otulabels);
 
         //Bar chart creation
         var trace = {
             x: ten_values,
-            y: ten_otus,
+            y: named_otus,
             text: ten_otulabels,
             orientation: "h",
             type: "bar"
@@ -76,14 +84,15 @@ function buildCharts(sample) {
         };
 
         //Create data array for the plot
-        var bar_data = trace
+        var bar_data = [trace];
 
         //Define the plot layout
         var bar_layout ={
-            title: `Top Ten OTUs for ${sample}`,
+            //Dynamic graph title that updates along with ID number
+            title: `Top Ten OTUs for ID #${sample}`,
             xaxis: {title: "Sample Value"}
 
-        }
+        };
         
         //Plotting
         Plotly.newPlot("bar", bar_data, bar_layout);
