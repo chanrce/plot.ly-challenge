@@ -99,8 +99,29 @@ function buildCharts(sample) {
 
 
         // Create bubble chart in correct location        
+        var trace2 = {
+            x: otuids,
+            y: values,
+            mode: "markers",
+            text: otu_labels,
+            marker: {
+                size: values,
+                color: otuids
 
+            }
 
+        }
+
+        var bubble_data = [trace2];
+
+        var bubble_layout = {
+            title: "Samples",
+            showlegend: false,
+            height: 600,
+            width: 1100
+
+        }
+        Plotly.newPlot ("bubble", bubble_data, bubble_layout)
 
 
     })
