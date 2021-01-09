@@ -1,7 +1,3 @@
-/* The following is an example on how you might structure your code.
-This is not the only way to complete this assignment.
-Feel free to disregard and create your own code */
-
 // Define a function that will create metadata for given sample
 function buildMetadata(sample) {
 
@@ -14,8 +10,7 @@ function buildMetadata(sample) {
         //Filtering the samples.json data by id. Returning samples.json values if they match the given "sample"
         var filteredData =  Metadata.filter(selectiondata => selectiondata.id == sample);
         filteredData = filteredData[0]
-        console.log(filteredData);
-        
+        console.log(filteredData);   
 
         // Specify the location of the metadata -- where the new demographic chart will go --  and update it
         //Identifying the location -- use inspect HTML
@@ -23,9 +18,6 @@ function buildMetadata(sample) {
 
         //Refreshing/Updating the chart with new selected sample
         demographics.html("");
-
-
-
 
        //Add this information to the demographic info table
         Object.entries(filteredData).forEach(function([key,value]) {
@@ -35,11 +27,7 @@ function buildMetadata(sample) {
             row.append("td").html(`${value}`)
 
         });
-
-
     });
-    
-
 }
 
 // Define a function that will create charts for given sample
@@ -123,10 +111,7 @@ function buildCharts(sample) {
         }
         Plotly.newPlot ("bubble", bubble_data, bubble_layout)
 
-
     })
-
-
 
 }
 
@@ -150,8 +135,7 @@ function init() {
             var options = dropdownMenu.append("option")
 
             //Converting the options to text format
-            options.text(name)
-            
+            options.text(name)     
 
         });
         //Calls the first item in the dropdown
@@ -159,11 +143,6 @@ function init() {
         buildCharts(names[0])
 
     });
-
-
-        // Add dropdown option for each sample
-
-    // Use first sample to build metadata and initial plots
 
 }
 
@@ -177,4 +156,3 @@ function optionChanged(newSample){
 
 // Initialize dashboard on page load
 init();
-
