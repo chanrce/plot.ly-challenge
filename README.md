@@ -26,5 +26,5 @@
 * Bar Plot and Demographics Table:
  ![Bar Plot and Demographics Table](Images/barplot.png)
 * Bubble Chart:
- ![Bubble Chart](bubble.png)
+ ![Bubble Chart](Images/bubble.png)
 * [Deployment Link](https://chanrce.github.io/plotly-challenge/)
