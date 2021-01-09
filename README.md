@@ -25,6 +25,6 @@
 ## The Final Product: An Interactive Website
 * Bar Plot and Demographics Table:
  ![Bar Plot and Demographics Table](Images/barplot.png)
-* Bubble Chart:
+* Bubble Chart (demonstrating interactive data feature):
  ![Bubble Chart](Images/bubble.png)
 * [Deployment Link](https://chanrce.github.io/plotly-challenge/)
