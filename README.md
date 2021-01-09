@@ -10,7 +10,7 @@
 
 ## Technologies Used
 
-* JavaScript - D3, Plotly
+* JavaScript - Plotly, D3
 * HTML
 * CSS
 * Bootstrap
@@ -26,5 +26,5 @@
 * Bar Plot and Demographics Table:
  ![Bar Plot and Demographics Table](Images/barplot.png)
 * Bubble Chart:
- ![Bubble Chart](Bubble.png)
+ ![Bubble Chart](bubble.png)
 * [Deployment Link](https://chanrce.github.io/plotly-challenge/)
